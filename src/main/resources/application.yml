@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+spring:
+  jta:
+    transaction-manager-id: jtaManager
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/security?charset=utf8mb4&useSSL=false
+    username: postgres
+    password: root
+
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+  jpa:
+    show-sql: true
+    database: postgresql
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL9Dialect
+        temp:
+          use_jdbc_metadata_defaults: false
