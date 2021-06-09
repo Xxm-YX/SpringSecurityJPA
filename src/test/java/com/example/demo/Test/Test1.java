@@ -51,4 +51,12 @@ public class Test1 {
         u2.setRoles(rs2);
         userDao.save(u2);
     }
+
+    @Test
+    public void showAll(){
+        List<User> all = userDao.findAll();
+        for (User user : all) {
+            System.out.println(user);
+        }
+    }
 }
